@@ -1,4 +1,5 @@
 import { Clock, Users, Star, Printer, Heart, Share2 } from "lucide-react";
+import { Button, Badge } from "@geenius-ui/react-css";
 
 export default function RecipeDetailPage() {
     const ingredients = ["400g chicken breast", "2 lemons (juiced & zested)", "3 tbsp olive oil", "4 cloves garlic, minced", "2 tsp dried oregano", "1 tsp dried thyme", "Salt & pepper to taste", "Fresh parsley, chopped"];
@@ -7,7 +8,7 @@ export default function RecipeDetailPage() {
     return (<div style={{ padding: "var(--space-6)", maxWidth: 800, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "var(--space-6)" }}>
             <div>
-                <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--color-accent-primary)", textTransform: "uppercase", letterSpacing: 1 }}>Mains · Easy</span>
+                <Badge variant="default" size="sm">Mains · Easy</Badge>
                 <h1 className="serif" style={{ fontSize: "var(--font-size-2xl)", marginTop: 4, marginBottom: "var(--space-2)" }}>Lemon Herb Chicken</h1>
                 <div style={{ display: "flex", gap: "var(--space-5)", color: "var(--color-text-secondary)", fontSize: "14px", fontWeight: 600 }}>
                     <span style={{ display: "flex", alignItems: "center", gap: 4 }}><Clock size={16} /> 45 min</span>
@@ -16,9 +17,9 @@ export default function RecipeDetailPage() {
                 </div>
             </div>
             <div style={{ display: "flex", gap: "var(--space-2)" }}>
-                <button className="btn btn-sm btn-ghost"><Heart size={16} /></button>
-                <button className="btn btn-sm btn-ghost"><Share2 size={16} /></button>
-                <button className="btn btn-sm btn-ghost"><Printer size={16} /></button>
+                <Button variant="ghost" size="sm" icon={<Heart size={16} />} />
+                <Button variant="ghost" size="sm" icon={<Share2 size={16} />} />
+                <Button variant="ghost" size="sm" icon={<Printer size={16} />} />
             </div>
         </div>
 

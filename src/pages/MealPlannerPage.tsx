@@ -1,4 +1,5 @@
 import { ShoppingCart, ChevronLeft, ChevronRight, Plus } from "lucide-react";
+import { Button, Card } from "@geenius-ui/react-css";
 
 export default function MealPlannerPage() {
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -17,17 +18,17 @@ export default function MealPlannerPage() {
             <div>
                 <h1 className="serif" style={{ fontSize: "var(--font-size-2xl)", marginBottom: 4 }}>Meal Planner</h1>
                 <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)" }}>
-                    <button className="btn btn-sm" style={{ padding: 4 }}><ChevronLeft size={16} /></button>
+                    <Button variant="outline" size="sm" icon={<ChevronLeft size={16} />} />
                     <span style={{ fontWeight: 600, color: "var(--color-text-secondary)" }}>Oct 26 – Nov 1, 2026</span>
-                    <button className="btn btn-sm" style={{ padding: 4 }}><ChevronRight size={16} /></button>
+                    <Button variant="outline" size="sm" icon={<ChevronRight size={16} />} />
                 </div>
             </div>
-            <button className="btn btn-primary"><ShoppingCart size={16} /> Generate Shopping List</button>
+            <Button variant="primary" icon={<ShoppingCart size={16} />}>Generate Shopping List</Button>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "var(--space-3)" }}>
             {days.map(day => (
-                <div key={day} className="card" style={{ minHeight: 320 }}>
+                <Card key={day} padding="none" className="meal-day-card">
                     <div style={{ padding: "var(--space-3) var(--space-4)", borderBottom: "1px solid var(--color-border)", fontWeight: 700, fontSize: "14px", textAlign: "center", background: day === "Wednesday" ? "var(--color-accent-soft)" : "transparent", color: day === "Wednesday" ? "var(--color-accent-primary)" : "var(--color-text-primary)" }}>
                         {day.slice(0, 3)}
                     </div>
@@ -38,12 +39,12 @@ export default function MealPlannerPage() {
                                 {meals[day]?.[meal] ? (
                                     <div style={{ fontSize: "13px", fontWeight: 600, padding: "6px 8px", background: "var(--color-bg-secondary)", borderRadius: "var(--radius-sm)" }}>{meals[day][meal]}</div>
                                 ) : (
-                                    <button className="btn-ghost" style={{ width: "100%", padding: "6px", fontSize: "12px", color: "var(--color-text-tertiary)", borderRadius: "var(--radius-sm)", border: "1px dashed var(--color-border)" }}><Plus size={12} /></button>
+                                    <Button variant="ghost" size="sm" icon={<Plus size={12} />} className="meal-add-btn" />
                                 )}
                             </div>
                         ))}
                     </div>
-                </div>
+                </Card>
             ))}
         </div>
     </div>);
