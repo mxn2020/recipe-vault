@@ -1,5 +1,6 @@
-id: f12386e6-ff1d-484d-ae34-1ba6e7003a23
 name: recipe-vault
+project_scope: main
+project_type: standalone
 description: React + TypeScript + Vite
 tier: prototype
 lane: oss
@@ -9,5 +10,6 @@ stack: [typescript, react, convex, vite]
 repo: "https://github.com/mxn2020/recipe-vault"
 deploy_url: null
 last_active: 2026-02-25
-tags: []
-notes: 
+tags: [recipes, cooking, food, collection, organization, sharing, kitchen]
+notes: null
+id: f12386e6-ff1d-484d-ae34-1ba6e7003a23
